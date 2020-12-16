@@ -1,7 +1,7 @@
 class TestsController < ApplicationController
   def index
     @test = Test.all
-    @audio = @test.find(3)
+    @audio = @test.find(4)
   end
   
   def new
@@ -16,7 +16,7 @@ class TestsController < ApplicationController
 
   private
   def test_params
-    params.require(:test).permit(:id,:audio)
+    params.require(:test).permit(:id,:file)
   end
 
 end

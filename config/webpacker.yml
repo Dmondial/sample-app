@@ -49,6 +49,8 @@ default: &default
     - .gif
     - .jpeg
     - .jpg
+    - .mp3
+    - .wav
 
 development:
   <<: *default

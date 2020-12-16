@@ -16,8 +16,8 @@
 
   <body>
 
-  <%= audio_tag("piano.mp3", :autoplay => true, :controls => true) %>
-  <%= audio_tag(@test.find(2).audio.blobs, :autoplay => true, :controls => true) %>
+  <%= audio_tag(@audio.file.url, :autoplay => true, :controls => true) %>
+  <%#= audio_tag(@test.find(2).audio.blobs, :autoplay => true, :controls => true) %>
 
     <!-- カーテン -->
     <div id="curtain">
@@ -29,7 +29,7 @@
 
     <!-- ガイド -->
     <div class="panel pop">
-      <span>手軽に遊べるように<a href="./mp3-samples.zip">サンプルデータ</a>を作成しました。ダウンロード＆解凍してご自由にお使いください。</span>
+      <span>手軽に遊べるように<a href="./mp3-samples.zip">サンプル</a>を作成しました。ダウンロード＆解凍してご自由にお使いください。</span>
     </div>
 
     <!-- 入力 -->
