@@ -42,7 +42,7 @@ class Daw {
    */
   handle() {
     // ファイル選択時
-    this.dom.fileInput.addEventListener('change', (ev) => {
+    this.dom.fileInput.addEventListener('click', (ev) => {
       this.onSelectFile(ev)
     });
     // 再生ボタン押下時の処理
@@ -123,7 +123,10 @@ class Daw {
    */
   onSelectFile(event) {
     // 選択されたファイル一覧を取得
-    const files = Array.from(event.target.files);
+    const choseAudio = document.getElementsByClassName("file-read")
+    // const files = Array.from(event.target.files);
+    const files = Array.from(choseAudio.href);
+    debugger
     if (files.length == 0) {
       return;
     }

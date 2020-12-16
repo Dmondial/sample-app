@@ -1,7 +1,7 @@
 class TestsController < ApplicationController
   def index
+    @audio = Test.find(6)
     @test = Test.all
-    @audio = @test.find(6)
   end
   
   def new
@@ -13,6 +13,9 @@ class TestsController < ApplicationController
     @test.save
   end
 
+  def sound_for 
+    @test = Test.all
+  end
 
   private
   def test_params

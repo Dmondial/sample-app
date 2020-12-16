@@ -16,7 +16,7 @@
 
   <body>
 
-  <%= audio_tag(@audio.file.url, :autoplay => true, :controls => true) %>
+  <%#= audio_tag(@audio.file.url, :autoplay => true, :controls => true) %>
   <%#= audio_tag(@test.find(2).audio.blobs, :autoplay => true, :controls => true) %>
 
     <!-- カーテン -->
@@ -36,7 +36,19 @@
     <div class="caption">入力（複数ファイル選択可能）</div>
     <div class="panel audio-in">
       <div class="file-wrapper">
-         <input type="file" id="wav-file" multiple>
+         
+        <div>
+          <%= form_with id: "wav-file" do |form| %>
+          <%#= form.select :file, [@test.find(6).file.url,@test.find(6).id] %>
+          <%#= form.collection_select(:file,Test.all,:file,:id) %>
+          <%= form.submit "選択"%>
+          <% end%>
+          <%#span class="file-read"><% @audio.file.url %>
+          <%# <input type="file" id="wav-file" multiple> %>
+          <%= link_to "音源",@audio.file.url , class: "file-read"%>
+          <%= link_to "音源",@audio.file.url , class: "file-read"%>
+          <%#= audio_tag(@audio.file.url, :autoplay => false, :controls => true) %>
+        </div>
        
       </div>
     </div>
